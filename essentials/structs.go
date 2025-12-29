@@ -109,6 +109,65 @@ func Structs() {
 	personPtr.Age = 50
 	fmt.Println("Değiştirilmiş yaş:", person1.Age)
 
+	// 7. Embedded struct nasıl çalışır?
+	fmt.Println("\n--- Embedded Struct Detaylı ---")
+
+	// Employee içinde "Person" yazınca, Go otomatik olarak
+	// Person'ın tüm field'larını Employee'ye "kopyalar" gibi düşün
+	// Yani employee.Name aslında employee.Person.Name'in kısayolu
+
+	fmt.Println("employee.Name:", employee.Name)             // Kısa yol
+	fmt.Println("employee.Person.Name:", employee.Person.Name) // Uzun yol - aynı şey
+
+	// 8. İsim çakışması (Name Collision) durumu
+	fmt.Println("\n--- İsim Çakışması ---")
+
+	type Manager struct {
+		Person          // Embedded - içinde Name var
+		Name     string // Kendi Name field'ı - ÇAKIŞMA!
+		TeamSize int
+	}
+
+	manager := Manager{
+		Person:   Person{Name: "Ahmet", Age: 40, Email: "ahmet@test.com"},
+		Name:     "Müdür Ahmet", // Bu Employee'nin kendi Name'i
+		TeamSize: 10,
+	}
+
+	// Çakışma olduğunda ne olur?
+	fmt.Println("manager.Name:", manager.Name)             // "Müdür Ahmet" - Kendi field'ı öncelikli
+	fmt.Println("manager.Person.Name:", manager.Person.Name) // "Ahmet" - Embedded olan
+
+	// Kural: Dıştaki (üst seviye) field her zaman öncelikli!
+
+	// 9. Birden fazla embedded struct
+	fmt.Println("\n--- Çoklu Embedded Struct ---")
+
+	type ContactInfo struct {
+		Phone string
+		Email string // Dikkat: Person'da da Email var!
+	}
+
+	type Customer struct {
+		Person      // Email var
+		ContactInfo // Email var - ÇAKIŞMA!
+		CustomerID  string
+	}
+
+	customer := Customer{
+		Person:      Person{Name: "Veli", Age: 28, Email: "veli@personal.com"},
+		ContactInfo: ContactInfo{Phone: "555-1234", Email: "veli@work.com"},
+		CustomerID:  "C001",
+	}
+
+	// İkisi de embedded olduğu için, Email'e direkt erişemezsin!
+	// fmt.Println(customer.Email) // HATA! Ambiguous selector
+
+	// Hangisini istediğini belirtmelisin:
+	fmt.Println("Person Email:", customer.Person.Email)           // veli@personal.com
+	fmt.Println("ContactInfo Email:", customer.ContactInfo.Email) // veli@work.com
+	fmt.Println("Telefon:", customer.Phone)                       // Çakışma yok, direkt erişim OK
+
 	// 7. Anonymous struct (tek seferlik kullanım için)
 	fmt.Println("\n--- Anonymous Struct ---")
 	config := struct {
