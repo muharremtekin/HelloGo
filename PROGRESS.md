@@ -47,12 +47,22 @@
 
 ## Kontrol Yapıları
 
-- [ ] If / Else
-- [ ] Switch
-- [ ] For döngüsü
-  - [ ] Klasik for
-  - [ ] While tarzı for
-  - [ ] Range ile for
+- [x] If / Else
+  - [x] Basit if/else
+  - [x] If with statement
+- [x] Switch
+  - [x] Basit switch
+  - [x] Switch with statement
+  - [x] Switch without expression
+  - [x] Fallthrough
+  - [x] Type switch
+- [x] For döngüsü
+  - [x] Klasik for
+  - [x] While tarzı for
+  - [x] Sonsuz döngü
+  - [x] Range ile for (slice, map, string)
+  - [x] Continue ve Break
+  - [x] Break with label
 
 ## Fonksiyonlar
 
