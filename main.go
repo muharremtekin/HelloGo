@@ -12,7 +12,8 @@ func main() {
 
 	// essentials.Slices()
 	// essentials.Arrays()
-	essentials.Structs()
+	// essentials.Structs()
+	essentials.Maps()
 	// wait for user input before exiting
 	var input string
 	fmt.Println("Press Enter to exit...")
