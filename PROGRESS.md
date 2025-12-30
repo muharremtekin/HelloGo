@@ -67,11 +67,14 @@
 ## Fonksiyonlar
 
 - [x] Temel fonksiyon tanımlama
-- [ ] Multiple return values
-- [ ] Named return values
-- [ ] Variadic functions (`...`)
-- [ ] Anonymous functions (closures)
-- [ ] Defer
+- [x] Multiple return values
+- [x] Named return values
+- [x] Variadic functions (`...`)
+- [x] Anonymous functions
+- [x] Closures
+- [x] Functions as parameters (higher-order)
+- [x] Defer (LIFO sırası)
+- [x] Function types
 
 ## İleri Seviye
 
