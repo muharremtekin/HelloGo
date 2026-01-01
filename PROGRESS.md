@@ -78,7 +78,13 @@
 
 ## İleri Seviye
 
-- [ ] Pointers
+- [x] Pointers
+  - [x] & (address of) ve * (dereference)
+  - [x] nil pointer
+  - [x] Pointer ve fonksiyonlar (pass by reference)
+  - [x] Pointer ve struct
+  - [x] new() fonksiyonu
+  - [x] Pointer to pointer
 - [ ] Interfaces
 - [ ] Error handling
 - [ ] Goroutines (concurrency)

@@ -98,8 +98,8 @@ func Functions() {
 	// Multiplier örneği
 	double := makeMultiplier(2)
 	triple := makeMultiplier(3)
-	fmt.Println("Double 5:", double(5))  // 10
-	fmt.Println("Triple 5:", triple(5))  // 15
+	fmt.Println("Double 5:", double(5)) // 10
+	fmt.Println("Triple 5:", triple(5)) // 15
 
 	// ==================== FUNCTIONS AS PARAMETERS ====================
 	fmt.Println("\n--- Functions as Parameters ---")

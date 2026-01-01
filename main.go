@@ -15,7 +15,8 @@ func main() {
 	// essentials.Structs()
 	// essentials.Maps()
 	// essentials.ControlFlow()
-	essentials.Functions()
+	// essentials.Functions()
+	essentials.Pointers()
 	// wait for user input before exiting
 	var input string
 	fmt.Println("Press Enter to exit...")
