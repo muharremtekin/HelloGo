@@ -85,7 +85,15 @@
   - [x] Pointer ve struct
   - [x] new() fonksiyonu
   - [x] Pointer to pointer
-- [ ] Interfaces
+- [x] Interfaces
+  - [x] Interface tanımlama
+  - [x] Implicit implementation
+  - [x] Empty interface (any)
+  - [x] Type assertion
+  - [x] Type switch
+  - [x] Interface composition
+  - [x] Stringer interface
+  - [x] Pointer vs value receiver (interface için)
 - [ ] Error handling
 - [ ] Goroutines (concurrency)
 - [ ] Channels
